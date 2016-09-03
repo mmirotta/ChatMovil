@@ -1,0 +1,7 @@
+<ion-view view-title="Chats">
+  <ion-content>
+	<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mensaje in misMensajes" ng-if="mensaje.usuario != null" type="item-text-wrap" >
+      <p><b>{{mensaje.usuario}}:</b> {{mensaje.mensaje}}</p>
+    </ion-item>
+  </ion-content>
+</ion-view>
