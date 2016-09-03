@@ -34,15 +34,16 @@ angular.module('starter.controllers', [])
 
 .controller('NuevoMensajeCtrl', function($scope) {
   var mensajeReferencia = new Firebase('https://chatutn-1e655.firebaseio.com/usuarios/');
-    $scope.txtUsuario = "Luis";
-    $scope.txtMensaje = "Hola";
+    $scope.form = {};
+    $scope.form.txtUsuario = "Luis";
+    $scope.form.txtMensaje = "";
   $scope.Enviar = function(){
 
     console.log($scope.txtUsuario);
     console.log($scope.txtMensaje);
     var fecha = Firebase.ServerValue.TIMESTAMP;
-    mensajeReferencia.push({usuario:$scope.txtUsuario, mensaje:$scope.txtMensaje, fechaIngreso:fecha});
-    $scope.txtMensaje = "";
+    mensajeReferencia.push({usuario:$scope.form.txtUsuario, mensaje:$scope.form.txtMensaje, fechaIngreso:fecha});
+    $scope.form.txtMensaje = "";
   };
 
 })
